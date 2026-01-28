@@ -1,0 +1,18 @@
+services:
+  backend:
+    build: .
+    container_name: fl-backend-api
+    restart: always
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./media:/app/media
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+    networks:
+      - felixlarssonfrontend_default
+networks:
+  felixlarssonfrontend_default:
+    external: true
+

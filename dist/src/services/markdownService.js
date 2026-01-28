@@ -1,9 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const POSTS_PATH = path.join(__dirname, "../../media/markdown");
+const POSTS_PATH = path.join(process.cwd(), "media/markdown");
 export const getAllFilesWithContent = () => {
     const files = fs
         .readdirSync(POSTS_PATH)
